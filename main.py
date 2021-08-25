@@ -6,7 +6,7 @@ import keyboard
 
 class StockMarket:
     def __init__(self):
-        self.current_price = 5
+        self.current_price = 10
         self.high = 100
         self.low = 100
         self.history = []
@@ -134,6 +134,11 @@ def main():
                 slow -= 0.01
         if cv2.waitKey(1) and keyboard.is_pressed("q"):
             break
+    #crash
+    cv2.putText(graph,"Stocks Crashed",(int(market.x/2),int(market.y/2)),cv2.FONT_HERSHEY_SIMPLEX,2,(0,0,1),4)  
+    cv2.imshow("graph",graph)
+    cv2.waitKey(0)
+
 
 if __name__ == "__main__":
     main()
